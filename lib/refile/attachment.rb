@@ -55,7 +55,7 @@ module Refile
         end
 
         define_method "#{name}=" do |value|
-          send(attacher).set(value)
+          send(attacher).set(value) unless value.nil?
         end
 
         define_method name do
